@@ -119,12 +119,12 @@ jobs:
     - name: Deploy databases first
       run: |
         echo "Deploying PostgreSQL..."
-        kubectl apply -f k8s-combined/postgres-deployment.yaml -n ${{ env.NAMESPACE }}
-        kubectl apply -f k8s-combined/postgres-service.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/postgres-deployment.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/postgres-service.yaml -n ${{ env.NAMESPACE }}
         
         echo "Deploying Redis..."
-        kubectl apply -f k8s-combined/redis-deployment.yaml -n ${{ env.NAMESPACE }}
-        kubectl apply -f k8s-combined/redis-service.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/redis-deployment.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/redis-service.yaml -n ${{ env.NAMESPACE }}
         
         # Wait for databases to be ready
         echo "Waiting for databases to be ready..."
@@ -134,20 +134,20 @@ jobs:
     - name: Deploy microservices
       run: |
         echo "Deploying vote service..."
-        kubectl apply -f k8s-combined/vote-deployment.yaml -n ${{ env.NAMESPACE }}
-        kubectl apply -f k8s-combined/vote-service.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/vote-deployment.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/vote-service.yaml -n ${{ env.NAMESPACE }}
         
         echo "Deploying result service..."
-        kubectl apply -f k8s-combined/result-deployment.yaml -n ${{ env.NAMESPACE }}
-        kubectl apply -f k8s-combined/result-service.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/result-deployment.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/result-service.yaml -n ${{ env.NAMESPACE }}
         
         echo "Deploying worker service..."
-        kubectl apply -f k8s-combined/worker-deployment.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/worker-deployment.yaml -n ${{ env.NAMESPACE }}
 
     - name: Deploy ingress
       run: |
         echo "Deploying ingress..."
-        kubectl apply -f k8s-combined/ingress.yaml -n ${{ env.NAMESPACE }}
+        kubectl apply -f k8s/ingress.yaml -n ${{ env.NAMESPACE }}
 
     - name: Wait for deployments to complete
       run: |
