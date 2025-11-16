@@ -12,7 +12,7 @@ on:
 
 env:
   AWS_REGION: us-east-2
-  EKS_CLUSTER_NAME: your-eks-cluster-name  # UPDATE THIS
+  EKS_CLUSTER_NAME: ironhack-main  # cluster name where i work
   DOCKERHUB_USERNAME: chinmayee606
   NAMESPACE: chinmayee
 
