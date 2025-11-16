@@ -11,7 +11,6 @@ metadata:
     # nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     # nginx.ingress.kubernetes.io/proxy-send-timeout: "2600"
     # nginx.ingress.kubernetes.io/websocket-services: "chinmayee-svc-result"
-    # nginx.org/rewrites: "serviceName=chinmayee-svc-result rewrite=/"
     nginx.ingress.kubernetes.io/websocket-services: "chinmayee-svc-result"
     nginx.ingress.kubernetes.io/proxy-set-header: "Upgrade $http_upgrade"
     nginx.ingress.kubernetes.io/proxy-set-header: "Connection $connection_upgrade"
