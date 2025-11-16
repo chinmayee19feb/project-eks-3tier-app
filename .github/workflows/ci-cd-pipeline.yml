@@ -105,8 +105,6 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
-        role-to-assume: arn:aws:iam::686699774218:role/eks-role-group-access
-        role-session-name: GitHubActions-eks-deploy
 
     - name: Update kubeconfig
       run: |
