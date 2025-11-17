@@ -11,4 +11,4 @@ spec:
       targetPort: 6379
   type: ClusterIP
               # default service type Exposes your redis pods inside the cluster as chinmayee-svc-redis:6379
-                      #Keeps it internal (ClusterIP). Only other pods inside the cluster (e.g., the vote app) can access it.S
+              #Keeps it internal (ClusterIP). Only other pods inside the cluster (e.g., the vote app) can access it.S
